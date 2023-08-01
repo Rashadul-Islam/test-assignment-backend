@@ -17,20 +17,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//test route
-app.use((req: Request, res: Response) => {
-  res.status(httpStatus.OK).json({
-    success: true,
-    message: 'Working perfectly !!!',
-    errorMessages: [
-      {
-        path: req.originalUrl,
-        message: 'Working perfectly !!!',
-      },
-    ],
-  });
-});
-
 //application routes
 app.use('/api/v1', router);
 
