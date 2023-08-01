@@ -21,5 +21,5 @@ const refreshTokenZodSchema = zod_1.z.object({
 });
 exports.AuthValidation = {
     loginZodSchema,
-    refreshTokenZodSchema
+    refreshTokenZodSchema,
 };

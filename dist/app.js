@@ -17,6 +17,19 @@ app.use((0, cookie_parser_1.default)());
 //body parser
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+//test route
+app.use((req, res) => {
+    res.status(http_status_1.default.OK).json({
+        success: true,
+        message: 'Working perfectly !!!',
+        errorMessages: [
+            {
+                path: req.originalUrl,
+                message: 'Working perfectly !!!',
+            },
+        ],
+    });
+});
 //application routes
 app.use('/api/v1', routes_1.default);
 //call global error handler
